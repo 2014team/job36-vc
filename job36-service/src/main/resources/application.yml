@@ -1,0 +1,63 @@
+server:
+  port: 9000 #项目端口
+  servlet:
+    context-path: /service #设置上下文路径
+
+spring:
+  application:
+    name: job36-service  # 暴露微服务名称
+# 数据库连接池配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #druid链接池
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://118.190.55.79:3306/job36_vc_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=true
+    username: job36_vc_dev
+    password: 123456
+    maxActive: 18
+    maxWait: 60000 # 最大等待时间
+    timeBetweenEvictionRunsMillis: 60000
+    validationQuery: SELECT 1 FROM dual
+    filters: stat,wall,log4j
+    # 初始化大小，最小
+    initialSize: 3
+    minIdle: 5
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+    testWhileIdle: false
+    testOnBorrow: false
+    testOnReturn: false
+    # 打开PSCache，并且指定每个连接上PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize : 20
+    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+    connectionProperties:
+      druid:
+        stat:
+          mergeSql: true
+          slowSqlMillis: 10000
+
+mybatis:
+  # 注册映射文件
+  mapper-locations: classpath:mapper/*.xml
+  #mybatis日志配置
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true  #为了使用输入页数为负或者超出最大页时候使页数为最小或最大值
+  supportMethodsArguments: true
+  params:
+    count: countSql
+
+# 指定Eureka服务中心
+eureka:
+  client:
+    register-with-eureka: true #指定当前主机是否注册eureka server
+    fetch-registry: true #指定当前主机是否从eureka server下载注册表
+    service-url:
+      defaultZone: http://admin:123456@127.0.0.1:8000/eureka
+  # 指定当前客户端主机在注册中心的名称
+  instance:
+    instance-id: job36-service

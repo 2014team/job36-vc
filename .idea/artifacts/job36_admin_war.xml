@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="job36-admin:war">
+    <output-path>$PROJECT_DIR$/job36-admin/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>job36-admin</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="job36-admin-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="job36-admin:war exploded" />
+    </root>
+  </artifact>
+</component>

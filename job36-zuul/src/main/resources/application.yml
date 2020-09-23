@@ -1,0 +1,46 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /zuul #设置上下文路径
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: job36-zuul  # 暴露微服务名称
+# 编码设置
+  http:
+    encoding: UTF-8
+    enabled: true
+
+
+# 指定Eureka服务中心
+eureka:
+  client:
+    register-with-eureka: true #指定当前主机是否注册eureka server
+    fetch-registry: true #指定当前主机是否从eureka server下载注册表
+    service-url:
+      defaultZone: http://admin:123456@127.0.0.1:8000/eureka
+  # 指定当前客户端主机在注册中心的名称
+  instance:
+    instance-id: job36-zuul
+
+#zuul配置
+zuul:
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  #指定统一的前辍
+  routes:
+    # 指定路由规则
+    job36-admin: /job36-admin/**
+    job36-api: /job36-api/**
+
+#日志采用logback输出
+logging:
+  config: classpath:log/logback.xml
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure:
+            logging: info

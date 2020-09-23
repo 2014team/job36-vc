@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/job36-admin/job36-admin.iml" filepath="$PROJECT_DIR$/job36-admin/job36-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job36-api/job36-api.iml" filepath="$PROJECT_DIR$/job36-api/job36-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job36-common/job36-common.iml" filepath="$PROJECT_DIR$/job36-common/job36-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job36-domain/job36-domain.iml" filepath="$PROJECT_DIR$/job36-domain/job36-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job36-eureka/job36-eureka.iml" filepath="$PROJECT_DIR$/job36-eureka/job36-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job36-parent/job36-parent.iml" filepath="$PROJECT_DIR$/job36-parent/job36-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job36-service/job36-service.iml" filepath="$PROJECT_DIR$/job36-service/job36-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job36-zuul/job36-zuul.iml" filepath="$PROJECT_DIR$/job36-zuul/job36-zuul.iml" />
+    </modules>
+  </component>
+</project>

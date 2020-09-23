@@ -1,0 +1,53 @@
+server:
+  port: 8090 #项目端口
+  servlet:
+    context-path: /admin #设置上下文路径
+
+spring:
+  application:
+    name: job36-admin  # 暴露微服务名称
+
+  mvc:  #前端模板配置
+    view:
+      prefix: /WEB-INF/jsp/   #jsp文件路径
+      suffix: .jsp
+  http:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 10000MB
+
+# 指定Eureka服务中心
+eureka:
+  client:
+    register-with-eureka: true #指定当前主机是否注册eureka server
+    fetch-registry: true #指定当前主机是否从eureka server下载注册表
+    service-url:
+      defaultZone: http://admin:123456@127.0.0.1:8000/eureka
+  # 指定当前客户端主机在注册中心的名称
+  instance:
+    instance-id: job36-admin
+
+#配置
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000  # 指定Feign客户端连接提供者的超时时限   取决于网络环境
+        readTimeout: 5000   # 指定Feign客户端从请求到获取到提供者给出的响应的超时时限  取决于业务逻辑运算时间
+  compression:
+    request:
+      enabled: true   # 开启对请求的压缩
+      mime-types: text/xml, application/xml
+      min-request-size: 2048   # 指定启用压缩的最小文件大小
+    response:
+      enabled: true   # 开启对响应的压缩
+
+#日志采用logback输出
+logging:
+  config: classpath:log/logback.xml
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure:
+            logging: info

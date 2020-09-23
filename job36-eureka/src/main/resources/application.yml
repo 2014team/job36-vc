@@ -1,0 +1,33 @@
+server:
+  port: 8000
+
+###服务名称
+spring:
+  application:
+    name: job36-eureka
+  security:
+    basic:
+      enable: true #开启基于HTTP basic的认证
+    user: #配置用户的账号信息
+      name: admin
+      password: 123456
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #指定当前主机是否注册eureka server
+    fetch-registry: false #指定当前主机是否从eureka server下载注册表
+    service-url:
+      #暴露eureka server服务地址
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
+
+#日志采用logback输出
+logging:
+  config: classpath:log/logback.xml
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure:
+            logging: info

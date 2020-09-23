@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="job36-admin" />
+        <module name="job36-api" />
+        <module name="job36-common" />
+        <module name="job36-domain" />
+        <module name="job36-eureka" />
+        <module name="job36-service" />
+        <module name="job36-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="comjob36domain" target="1.5" />
+      <module name="demo" target="1.8" />
+      <module name="job36-admin" target="1.8" />
+      <module name="job36-api" target="1.8" />
+      <module name="job36-common" target="1.8" />
+      <module name="job36-domain" target="1.8" />
+      <module name="job36-eureka" target="1.8" />
+      <module name="job36-parent" target="1.8" />
+      <module name="job36-service" target="1.8" />
+      <module name="job36-video" target="1.8" />
+      <module name="job36-video-parent" target="1.8" />
+      <module name="job36-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="job36-admin" options="-parameters" />
+      <module name="job36-api" options="-parameters" />
+      <module name="job36-common" options="-parameters" />
+      <module name="job36-domain" options="-parameters" />
+      <module name="job36-eureka" options="-parameters" />
+      <module name="job36-parent" options="-parameters" />
+      <module name="job36-service" options="-parameters" />
+      <module name="job36-video" options="-parameters" />
+      <module name="job36-video-parent" options="-parameters" />
+      <module name="job36-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.job36.service.business.course.dao.CourseDao">
+
+	<select id="count" parameterType="Map" resultType="Integer">
+		select count(1)  from course
+		<where>
+			<if test="null != courseName">
+				courseName = #{courseName}
+			</if>
+		</where>
+	</select>
+
+	<select id="select" parameterType="Map" resultType="com.job36.domain.course.entity.Course">
+		select *  from course
+		<where>
+			<if test="null != courseName">
+				courseName = #{courseName}
+			</if>
+		</where>
+		<if test="null != pageNo and  null != pageSize">
+			limit #{pageNo},#{pageSize}
+		</if>
+	</select>
+
+</mapper>

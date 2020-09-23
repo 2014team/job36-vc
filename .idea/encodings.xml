@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job36-zuul" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
